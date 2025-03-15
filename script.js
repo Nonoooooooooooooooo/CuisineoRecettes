@@ -113,29 +113,26 @@ const noResultsMessage = document.createElement('p');
 noResultsMessage.textContent = "Aucune recette ne correspond à votre recherche.";
 document.querySelector('.recipe-category').appendChild(noResultsMessage);
 
-// Fonction pour définir l'image de la recette du jour
 function setRecipeOfTheDay() {
-    console.log('Vérification de l\'élément .featured-recipe...');
-    
-    // Sélectionner l'élément d'image dans la section .featured-recipe
     const recipeSection = document.querySelector('.featured-recipe');
+    console.log(recipeSection);  // Cela devrait afficher l'élément dans la console
+
     if (!recipeSection) {
         console.error('L\'élément .featured-recipe n\'existe pas dans le DOM.');
-        return; // Sortir de la fonction si l'élément n'existe pas
+        return;  // Si l'élément n'est pas trouvé, on arrête l'exécution
     }
-    
+
     const recipeImage = recipeSection.querySelector('img');
+    console.log(recipeImage);  // Vérifier si l'image est bien trouvée dans la section
+
     if (recipeImage) {
-        console.log('Image trouvée, modification du src...');
-        // Définir l'URL de l'image de la recette du jour
-        recipeImage.src = 'recette_du_moment.jpg'; // Exemple : './images/recette_du_jour.jpg'
+        // Remplacer par le bon chemin
+        recipeImage.src = 'images/recette_du_moment.jpg';  // Chemin relatif de l'image
     } else {
-        console.error('L\'élément <img> à l\'intérieur de .featured-recipe n\'a pas été trouvé.');
+        console.error('L\'élément <img> dans .featured-recipe n\'a pas été trouvé.');
     }
 }
 
-// Écouter l'événement 'DOMContentLoaded' pour s'assurer que le DOM est entièrement chargé
 document.addEventListener("DOMContentLoaded", function() {
-    // Appeler la fonction setRecipeOfTheDay lorsque le DOM est chargé
-    setRecipeOfTheDay();
+    setRecipeOfTheDay();  // Appeler la fonction pour définir la recette du jour
 });
