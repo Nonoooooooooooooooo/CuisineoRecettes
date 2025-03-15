@@ -35,24 +35,21 @@ function populateCarousels() {
     Object.keys(recipesByCategory).forEach((category, categoryIndex) => {
         const container = document.getElementById(category);
         recipesByCategory[category].forEach((recipe, recipeIndex) => {
-            // Créer une carte de recette
-            const card = document.createElement('div');
-            card.classList.add('recipe-card');
-            
-            // Créer un lien autour de la carte
+            // Créer un lien autour de chaque carte
             const link = document.createElement('a');
             
             // Générer un identifiant unique pour chaque recette
             const recipeId = `${categoryIndex + 1}_${recipeIndex + 1}`;  // format : "1_1", "1_2", "2_1", ...
-            link.href = `recette${recipeId}.html`; // Utiliser cet identifiant unique pour l'URL de la recette
+            link.href = `recette${recipeId}.html`;  // Utiliser cet identifiant unique pour l'URL de la recette
+            link.classList.add('recipe-link'); // Ajouter une classe au lien pour un meilleur style (si nécessaire)
             
-            link.classList.add('recipe-link'); // Ajouter une classe au lien pour le style
-            
-            // Ajouter l'image et le titre à la carte
+            // Créer la carte de recette
+            const card = document.createElement('div');
+            card.classList.add('recipe-card');
             card.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}">
                               <h3>${recipe.name}</h3>`;
-            
-            // Ajouter la carte au lien
+
+            // Ajouter la carte à l'intérieur du lien
             link.appendChild(card);
 
             // Ajouter le lien au conteneur de la catégorie
