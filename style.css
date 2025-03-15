@@ -366,7 +366,7 @@ footer ul li a {
 
 .recipe-link {
     text-decoration: none; /* Supprimer le soulignement du lien */
-    color: inherit; /* Laisser la couleur du texte telle quelle */
+    color: #333; /* Laisser la couleur du texte telle quelle */
 }
 
 .recipe-card:hover {
