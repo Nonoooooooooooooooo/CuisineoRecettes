@@ -4,24 +4,24 @@ document.querySelector('.newsletter button').addEventListener('click', function(
 });
 const recipesByCategory = {
     classiques: [
-        { name: "Coq au vin", image: "images/coq_au_vin.jpg" },
-        { name: "Bœuf bourguignon", image: "images/boeuf_bourguignon.jpg" },
-        { name: "Quiche lorraine", image: "images/quiche_lorraine.jpg" }
+        { name: "Coq au vin", image: "coq_au_vin.jpg" },
+        { name: "Bœuf bourguignon", image: "boeuf_bourguignon.jpg" },
+        { name: "Quiche lorraine", image: "quiche_lorraine.jpg" }
     ],
     entrees: [
-        { name: "Bruschetta", image: "images/bruschetta.jpg" },
-        { name: "Velouté de potiron", image: "images/veloute.jpg" },
-        { name: "Salade César", image: "images/salade_cesar.jpg" }
+        { name: "Bruschetta", image: "bruschetta.jpg" },
+        { name: "Velouté de potiron", image: "veloute.jpg" },
+        { name: "Salade César", image: "salade_cesar.jpg" }
     ],
     desserts: [
-        { name: "Tarte tatin", image: "images/tarte_tatin.jpg" },
-        { name: "Mousse au chocolat", image: "images/mousse.jpg" },
-        { name: "Profiteroles", image: "images/profiteroles.jpg" }
+        { name: "Tarte tatin", image: "tarte_tatin.jpg" },
+        { name: "Mousse au chocolat", image: "mousse.jpg" },
+        { name: "Profiteroles", image: "profiteroles.jpg" }
     ],
     boissons: [
-        { name: "Smoothie banane-fraise", image: "images/smoothie.jpg" },
-        { name: "Chocolat chaud maison", image: "images/chocolat_chaud.jpg" },
-        { name: "Citronnade fraîche", image: "images/citronnade.jpg" }
+        { name: "Smoothie banane-fraise", image: "smoothie.jpg" },
+        { name: "Chocolat chaud maison", image: "chocolat_chaud.jpg" },
+        { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ]
 };
 
