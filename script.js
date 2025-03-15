@@ -42,3 +42,4 @@ function populateCarousels() {
 
 // Lancer la fonction au chargement de la page
 document.addEventListener("DOMContentLoaded", populateCarousels);
+console.log("Le script fonctionne !");
