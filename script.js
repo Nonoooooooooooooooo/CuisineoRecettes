@@ -86,3 +86,30 @@ document.addEventListener('DOMContentLoaded', function() {
     populateCarousels();
     setRecipeOfTheDay();
 });
+const searchInput = document.getElementById('searchInput');
+
+// Fonction pour filtrer les cartes de recettes
+function filterRecipes() {
+    const searchTerm = searchInput.value.toLowerCase(); // Le terme de recherche en minuscule pour éviter la sensibilité à la casse
+    
+    // Récupérer toutes les cartes de recettes
+    const recipeCards = document.querySelectorAll('.recipe-card');
+
+    recipeCards.forEach(card => {
+        const recipeName = card.querySelector('h3').textContent.toLowerCase(); // Le nom de la recette, en minuscule pour une recherche insensible à la casse
+
+        // Vérifier si le nom de la recette contient le terme de recherche
+        if (recipeName.includes(searchTerm)) {
+            card.style.display = 'block'; // Afficher la carte si elle correspond
+        } else {
+            card.style.display = 'none'; // Cacher la carte si elle ne correspond pas
+        }
+    });
+}
+
+// Ajouter un écouteur d'événement pour déclencher le filtrage à chaque saisie
+searchInput.addEventListener('input', filterRecipes);
+const noResultsMessage = document.createElement('p');
+noResultsMessage.textContent = "Aucune recette ne correspond à votre recherche.";
+document.querySelector('.recipe-category').appendChild(noResultsMessage);
+
