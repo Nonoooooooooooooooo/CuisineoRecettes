@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recettes - Cuisineo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- En-tête (identique à index.html) -->
+    <header>
+        <h1>Cuisineo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recipes.html">Recettes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bandeau avec la recette du moment -->
+    <section class="featured-recipe">
+        <img src="images/recette_du_moment.jpg" alt="Recette du moment">
+        <div class="featured-content">
+            <h2>🍽️ Recette du Moment : Tarte aux fraises maison</h2>
+            <p>Une délicieuse tarte aux fraises avec une pâte croustillante et une crème onctueuse.</p>
+            <a href="#" class="btn">Voir la recette</a>
+        </div>
+    </section>
+
+    <!-- Sections de recettes par catégorie avec carrousel -->
+    <section class="recipe-category">
+        <h2>Les Classiques</h2>
+        <div class="carousel">
+            <button class="prev">&lt;</button>
+            <div class="carousel-track" id="classiques"></div>
+            <button class="next">&gt;</button>
+        </div>
+    </section>
+
+    <section class="recipe-category">
+        <h2>Entrées Gourmandes</h2>
+        <div class="carousel">
+            <button class="prev">&lt;</button>
+            <div class="carousel-track" id="entrees"></div>
+            <button class="next">&gt;</button>
+        </div>
+    </section>
+
+    <section class="recipe-category">
+        <h2>Desserts Délices</h2>
+        <div class="carousel">
+            <button class="prev">&lt;</button>
+            <div class="carousel-track" id="desserts"></div>
+            <button class="next">&gt;</button>
+        </div>
+    </section>
+
+    <section class="recipe-category">
+        <h2>Boissons Sucrées</h2>
+        <div class="carousel">
+            <button class="prev">&lt;</button>
+            <div class="carousel-track" id="boissons"></div>
+            <button class="next">&gt;</button>
+        </div>
+    </section>
+
+    <!-- Pied de page (identique à index.html) -->
+    <footer>
+        <p>&copy; 2025 Cuisineo - Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
