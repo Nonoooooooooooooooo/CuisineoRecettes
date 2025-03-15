@@ -193,6 +193,7 @@ footer ul li a {
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+    margin-bottom: 30px; /* Ajoute un espace sous l'image */
 }
 
 .about-img {
@@ -200,4 +201,3 @@ footer ul li a {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
