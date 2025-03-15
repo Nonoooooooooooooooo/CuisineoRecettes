@@ -364,3 +364,14 @@ footer ul li a {
     margin: 10px;
 }
 
+.recipe-link {
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: inherit; /* Laisser la couleur du texte telle quelle */
+}
+
+.recipe-card:hover {
+    transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
+    transition: transform 0.3s ease;
+}
+
+
