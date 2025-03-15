@@ -115,14 +115,22 @@ document.querySelector('.recipe-category').appendChild(noResultsMessage);
 
 // Fonction pour définir l'image de la recette du jour
 function setRecipeOfTheDay() {
-    // Sélectionner l'élément d'image dans le DOM
-    const recipeImage = document.querySelector('#recipe-of-the-day img');
+    console.log('Vérification de l\'élément .featured-recipe...');
     
-    // Vérifier si l'élément existe avant de définir son 'src'
+    // Sélectionner l'élément d'image dans la section .featured-recipe
+    const recipeSection = document.querySelector('.featured-recipe');
+    if (!recipeSection) {
+        console.error('L\'élément .featured-recipe n\'existe pas dans le DOM.');
+        return; // Sortir de la fonction si l'élément n'existe pas
+    }
+    
+    const recipeImage = recipeSection.querySelector('img');
     if (recipeImage) {
-        recipeImage.src = 'path/to/your/image.jpg'; // Remplacer par l'URL de l'image de la recette du jour
+        console.log('Image trouvée, modification du src...');
+        // Définir l'URL de l'image de la recette du jour
+        recipeImage.src = 'path/to/your/image.jpg'; // Exemple : './images/recette_du_jour.jpg'
     } else {
-        console.error('L\'élément pour l\'image de la recette du jour n\'a pas été trouvé.');
+        console.error('L\'élément <img> à l\'intérieur de .featured-recipe n\'a pas été trouvé.');
     }
 }
 
@@ -131,4 +139,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Appeler la fonction setRecipeOfTheDay lorsque le DOM est chargé
     setRecipeOfTheDay();
 });
-
