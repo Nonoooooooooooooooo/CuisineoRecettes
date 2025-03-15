@@ -2,6 +2,7 @@ document.querySelector('.newsletter button').addEventListener('click', function(
     e.preventDefault();
     alert('Merci de vous être abonné à notre newsletter !');
 });
+
 const recipesByCategory = {
     classiques: [
         { name: "Coq au vin", image: "coq_au_vin.jpg" },
