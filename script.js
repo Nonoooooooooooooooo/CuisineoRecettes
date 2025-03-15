@@ -34,15 +34,29 @@ const recipesByCategory = {
 function populateCarousels() {
     Object.keys(recipesByCategory).forEach(category => {
         const container = document.getElementById(category);
-        recipesByCategory[category].forEach(recipe => {
+        recipesByCategory[category].forEach((recipe, index) => {
+            // Créer une carte de recette
             const card = document.createElement('div');
             card.classList.add('recipe-card');
+            
+            // Créer un lien autour de la carte
+            const link = document.createElement('a');
+            link.href = `recette${index + 1}.html`; // Générer le lien vers la page de la recette (ex. recette1.html, recette2.html)
+            link.classList.add('recipe-link'); // Ajoute une classe au lien pour le style
+            
+            // Ajouter l'image et le titre à la carte
             card.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}">
                               <h3>${recipe.name}</h3>`;
-            container.appendChild(card);
+            
+            // Ajouter la carte au lien
+            link.appendChild(card);
+
+            // Ajouter le lien au conteneur de la catégorie
+            container.appendChild(link);
         });
     });
 }
+
 
 // Lancer la fonction au chargement de la page
 document.addEventListener("DOMContentLoaded", populateCarousels);
