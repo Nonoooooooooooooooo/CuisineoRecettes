@@ -30,36 +30,59 @@ const recipesByCategory = {
     ]
 };
 
-// Fonction pour remplir les carrousels
+// Fonction pour remplir les carrousels avec les recettes
 function populateCarousels() {
     Object.keys(recipesByCategory).forEach((category, categoryIndex) => {
         const container = document.getElementById(category);
         recipesByCategory[category].forEach((recipe, recipeIndex) => {
-            // Créer un lien autour de chaque carte
             const link = document.createElement('a');
-            
-            // Générer un identifiant unique pour chaque recette
-            const recipeId = `${categoryIndex + 1}_${recipeIndex + 1}`;  // format : "1_1", "1_2", "2_1", ...
-            link.href = `recette${recipeId}.html`;  // Utiliser cet identifiant unique pour l'URL de la recette
-            link.classList.add('recipe-link'); // Ajouter une classe au lien pour un meilleur style (si nécessaire)
-            
-            // Créer la carte de recette
+            const recipeId = `${categoryIndex + 1}_${recipeIndex + 1}`;
+            link.href = `recette${recipeId}.html`;
+            link.classList.add('recipe-link');
+
             const card = document.createElement('div');
             card.classList.add('recipe-card');
             card.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}">
                               <h3>${recipe.name}</h3>`;
-
-            // Ajouter la carte à l'intérieur du lien
             link.appendChild(card);
-
-            // Ajouter le lien au conteneur de la catégorie
             container.appendChild(link);
         });
     });
 }
 
+// Fonction pour choisir une recette au hasard chaque jour
+function getRandomRecipeOfTheDay() {
+    const allRecipes = [];
+    Object.keys(recipesByCategory).forEach(category => {
+        recipesByCategory[category].forEach((recipe, index) => {
+            allRecipes.push({ ...recipe, category });
+        });
+    });
 
+    const randomIndex = Math.floor(Math.random() * allRecipes.length);
+    return allRecipes[randomIndex];
+}
 
-// Lancer la fonction au chargement de la page
-document.addEventListener("DOMContentLoaded", populateCarousels);
-console.log("Le script fonctionne !");
+// Fonction pour mettre à jour la recette du moment dans le HTML
+function setRecipeOfTheDay() {
+    const recipeOfTheDay = getRandomRecipeOfTheDay();
+
+    const featuredRecipeSection = document.querySelector('.featured-recipe');
+    const featuredContent = featuredRecipeSection.querySelector('.featured-content');
+    const recipeImage = featuredContent.querySelector('img');
+    const recipeTitle = featuredContent.querySelector('h2');
+    const recipeDescription = featuredContent.querySelector('p');
+    const recipeLink = featuredContent.querySelector('a');
+
+    recipeImage.src = recipeOfTheDay.image;
+    recipeImage.alt = recipeOfTheDay.name;
+    recipeTitle.textContent = `🍽️ Recette du Moment : ${recipeOfTheDay.name}`;
+    recipeDescription.textContent = `Découvrez cette recette incontournable de la catégorie ${recipeOfTheDay.category}.`;
+    recipeLink.href = `recette${recipeOfTheDay.category}_${allRecipes.indexOf(recipeOfTheDay) + 1}.html`;
+}
+
+// Lancer les fonctions lors du chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    populateCarousels();
+    setRecipeOfTheDay();
+});
