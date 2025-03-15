@@ -201,3 +201,68 @@ footer ul li a {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Section Contact */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff7f50;
+}
+
+/* Container pour les réseaux sociaux */
+.social-media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Chaque item de réseau social */
+.social-media-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media-item.left {
+    flex-direction: row-reverse;
+}
+
+.social-media-item.right {
+    flex-direction: row;
+}
+
+/* Image des réseaux sociaux */
+.social-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Texte associé à chaque réseau social */
+.social-text {
+    max-width: 600px;
+}
+
+.social-text h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.social-text p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #666;
+}
+
+.social-text a {
+    font-size: 1.1rem;
+    color: #ff7f50;
+    text-decoration: none;
+}
