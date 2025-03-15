@@ -128,7 +128,7 @@ function setRecipeOfTheDay() {
     if (recipeImage) {
         console.log('Image trouvée, modification du src...');
         // Définir l'URL de l'image de la recette du jour
-        recipeImage.src = 'path/to/your/image.jpg'; // Exemple : './images/recette_du_jour.jpg'
+        recipeImage.src = 'recette_du_moment.jpg'; // Exemple : './images/recette_du_jour.jpg'
     } else {
         console.error('L\'élément <img> à l\'intérieur de .featured-recipe n\'a pas été trouvé.');
     }
