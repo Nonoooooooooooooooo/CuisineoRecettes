@@ -32,17 +32,21 @@ const recipesByCategory = {
 
 // Fonction pour remplir les carrousels
 function populateCarousels() {
-    Object.keys(recipesByCategory).forEach(category => {
+    Object.keys(recipesByCategory).forEach((category, categoryIndex) => {
         const container = document.getElementById(category);
-        recipesByCategory[category].forEach((recipe, index) => {
+        recipesByCategory[category].forEach((recipe, recipeIndex) => {
             // Créer une carte de recette
             const card = document.createElement('div');
             card.classList.add('recipe-card');
             
             // Créer un lien autour de la carte
             const link = document.createElement('a');
-            link.href = `recette${index + 1}.html`; // Générer le lien vers la page de la recette (ex. recette1.html, recette2.html)
-            link.classList.add('recipe-link'); // Ajoute une classe au lien pour le style
+            
+            // Générer un identifiant unique pour chaque recette
+            const recipeId = `${categoryIndex + 1}_${recipeIndex + 1}`;  // format : "1_1", "1_2", "2_1", ...
+            link.href = `recette${recipeId}.html`; // Utiliser cet identifiant unique pour l'URL de la recette
+            
+            link.classList.add('recipe-link'); // Ajouter une classe au lien pour le style
             
             // Ajouter l'image et le titre à la carte
             card.innerHTML = `<img src="${recipe.image}" alt="${recipe.name}">
@@ -56,6 +60,7 @@ function populateCarousels() {
         });
     });
 }
+
 
 
 // Lancer la fonction au chargement de la page
