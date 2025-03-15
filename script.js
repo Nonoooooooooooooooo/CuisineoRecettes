@@ -113,3 +113,22 @@ const noResultsMessage = document.createElement('p');
 noResultsMessage.textContent = "Aucune recette ne correspond à votre recherche.";
 document.querySelector('.recipe-category').appendChild(noResultsMessage);
 
+// Fonction pour définir l'image de la recette du jour
+function setRecipeOfTheDay() {
+    // Sélectionner l'élément d'image dans le DOM
+    const recipeImage = document.querySelector('#recipe-of-the-day img');
+    
+    // Vérifier si l'élément existe avant de définir son 'src'
+    if (recipeImage) {
+        recipeImage.src = 'path/to/your/image.jpg'; // Remplacer par l'URL de l'image de la recette du jour
+    } else {
+        console.error('L\'élément pour l\'image de la recette du jour n\'a pas été trouvé.');
+    }
+}
+
+// Écouter l'événement 'DOMContentLoaded' pour s'assurer que le DOM est entièrement chargé
+document.addEventListener("DOMContentLoaded", function() {
+    // Appeler la fonction setRecipeOfTheDay lorsque le DOM est chargé
+    setRecipeOfTheDay();
+});
+
