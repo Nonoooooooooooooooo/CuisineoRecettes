@@ -367,45 +367,35 @@ footer ul li a {
     transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
     transition: transform 0.3s ease;
 }
-/* Style de base pour la barre de recherche */
+/* Masquer la barre de recherche sur mobile */
 .search-bar {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    position: relative; /* Pour pouvoir la déplacer facilement sur mobile */
+    display: none;
 }
 
-.search-bar input {
-    width: 100%;
+/* Afficher le bouton de recherche */
+.search-bar-btn {
+    display: block;
     padding: 10px;
-    border: 1px solid #ccc;
+    background-color: #ff6600;
+    color: white;
+    border: none;
     border-radius: 4px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 /* Media Query pour les petits écrans (mobile) */
 @media screen and (max-width: 768px) {
-    .search-bar {
-        padding: 10px 15px;
-        margin-top: 10px;  /* Ajoute de l'espace au-dessus pour ne pas que ce soit trop serré */
-    }
-
-    .search-bar input {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    /* Déplacer la barre de recherche en dessous du menu */
-    header {
-        display: flex;
-        flex-direction: column;  /* Organiser les éléments en colonne sur mobile */
-        align-items: flex-start;  /* Aligner les éléments à gauche */
+    .search-bar-btn {
+        display: block;  /* Afficher le bouton de recherche */
+        margin-top: 20px; /* Ajouter un peu d'espace */
     }
 
     .search-bar {
-        margin-top: 20px; /* Donne un peu d'espace au-dessus de la barre de recherche */
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        display: none;  /* Cacher la barre de recherche par défaut */
     }
 }
-
-
-
