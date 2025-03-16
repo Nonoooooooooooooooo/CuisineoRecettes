@@ -49,6 +49,10 @@ function populateCarousels() {
         });
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+     populateCarousels();
+    
 const searchInput = document.getElementById('searchInput');
 
 // Fonction pour filtrer les cartes de recettes
