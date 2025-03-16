@@ -23,33 +23,30 @@
 </header>
 
 <section class="contact-container">
-    <h2>📩 Contactez-nous</h2>
-    <p>Une question ? Une suggestion ? Envoyez-nous un message !</p>
-
-    <form id="contactForm">
-        <div class="input-group">
+        <h1>📩 Contactez-nous</h1>
+        <p>Une question ? Une suggestion ? Remplissez le formulaire ci-dessous, nous vous répondrons rapidement !</p>
+        
+        <form action="https://formspree.io/f/xkgjgber" method="POST">
+            <label for="name">Nom :</label>
             <input type="text" id="name" name="name" required>
-            <label for="name">Nom</label>
-        </div>
 
-        <div class="input-group">
+            <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
-            <label for="email">Email</label>
-        </div>
 
-        <div class="input-group">
+            <label for="message">Message :</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-            <label for="message">Votre message</label>
-        </div>
 
-        <button type="submit" class="btn">Envoyer</button>
-    </form>
+            <!-- Redirection après envoi -->
+            <input type="hidden" name="_next" value="merci.html">
 
-    <p id="confirmationMessage" class="hidden">✅ Merci ! Votre message a bien été envoyé.</p>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</p>
 
     <h3>📞 Coordonnées</h3>
-    <p><strong>Email :</strong> contact@tonsite.com</p>
-    <p><strong>Téléphone :</strong> +33 6 12 34 56 78</p>
+    <p><strong>Email :</strong> cuisineorecettes@gmail.com</p>
+    <p><strong>Téléphone :</strong> </p>
     
     <h3>🔗 Suivez-nous</h3>
     <div class="social-iconss">
