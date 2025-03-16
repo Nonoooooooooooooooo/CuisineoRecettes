@@ -367,5 +367,11 @@ footer ul li a {
     transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
     transition: transform 0.3s ease;
 }
+/* Masquer la barre de recherche sur mobile */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        display: none;
+    }
+}
 
 
