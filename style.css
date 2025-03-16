@@ -373,5 +373,31 @@ footer ul li a {
     transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
     transition: transform 0.3s ease;
 }
+/* Style de base pour la barre de recherche */
+.search-bar {
+    width: 100%;  /* S'assure que la barre de recherche occupe toute la largeur disponible */
+    padding: 10px;  /* Ajoute un peu de padding autour de l'élément */
+    box-sizing: border-box;  /* Inclut le padding et la bordure dans la largeur totale de l'élément */
+}
+
+.search-bar input {
+    width: 100%;  /* L'input occupe toute la largeur de la barre */
+    padding: 10px;  /* Ajoute un padding pour rendre l'input plus agréable */
+    border: 1px solid #ccc;  /* Ajoute une bordure simple */
+    border-radius: 4px;  /* Bordures arrondies */
+    font-size: 16px;  /* Taille de la police pour la lisibilité */
+}
+
+/* Media Query pour les petits écrans (mobile) */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        padding: 10px 15px;  /* Un peu plus de padding sur les côtés */
+    }
+
+    .search-bar input {
+        font-size: 14px;  /* Réduit la taille de la police sur les petits écrans */
+        padding: 8px;  /* Moins de padding sur l'input */
+    }
+}
 
 
