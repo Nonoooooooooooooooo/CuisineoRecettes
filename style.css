@@ -39,12 +39,6 @@ nav ul li a {
     font-weight: bold;
 }
 
-.search-bar input {
-    padding: 8px;
-    border-radius: 4px;
-    border: none;
-}
-
 .banner {
     background-image: url('banner.jpg');
     background-size: cover;
