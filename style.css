@@ -370,7 +370,7 @@ footer ul li a {
 /* Masquer la barre de recherche et la vidéo sur mobile */
 @media screen and (max-width: 768px) {
     .search-bar,
-    .video-container {  /* Remplace "video-container" par la classe réelle de ta section vidéo */
+    .recipe-video {  /* Remplace "video-container" par la classe réelle de ta section vidéo */
         display: none;
     }
 }
