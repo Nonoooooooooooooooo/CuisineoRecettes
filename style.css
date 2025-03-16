@@ -38,23 +38,6 @@ nav ul li a {
     color: white;
     font-weight: bold;
 }
-.search bar {
-    background-color: #ff7f50;
-    padding: 40px 20px;
-    text-align: center;
-    color: white;
-}
-
-.search bar form {
-    margin-top: 20px;
-}
-
-.search bar input {
-    padding: 10px;
-    width: 300px;
-    border-radius: 5px;
-    border: none;
-}
 
 .banner {
     background-image: url('banner.jpg');
@@ -392,3 +375,48 @@ footer ul li a {
         display: none;
     }
 }
+/* Style général de la barre de recherche */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px; /* Ajuste la largeur */
+    margin: 10px auto; /* Centrage */
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Espace pour l'icône */
+    border: 2px solid #ff7f50; /* Bordure colorée */
+    border-radius: 25px; /* Coins arrondis */
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+/* Effet au focus */
+.search-bar input:focus {
+    border-color: #ff4500;
+    box-shadow: 0px 4px 10px rgba(255, 69, 0, 0.3);
+}
+
+/* Icône de recherche */
+.search-bar::after {
+    content: "🔍";
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: #ff7f50;
+    pointer-events: none; /* L'icône ne gêne pas l'écriture */
+}
+
+/* Ajustement pour mobile */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        display: none; /* Masque la barre de recherche */
+    }
+}
+
