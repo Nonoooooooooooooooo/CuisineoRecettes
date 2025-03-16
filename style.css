@@ -419,7 +419,7 @@ footer ul li a {
         display: none; /* Masque la barre de recherche */
     }
 }
-.contact-section {
+.contact-container {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
@@ -429,7 +429,7 @@ footer ul li a {
     text-align: center;
 }
 
-.contact-section h2 {
+.contact-container h2 {
     color: #333;
     margin-bottom: 10px;
 }
