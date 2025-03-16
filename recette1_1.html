@@ -23,48 +23,23 @@
             <input type="text" placeholder="Rechercher des recettes..." id="searchInput">
         </div>
     </header>
-
+    
     <section class="recipe-detail">
         <h1 id="recipe-title"></h1>
         <img id="recipe-image" src="" alt="Image de la recette">
         <p id="recipe-description"></p>
-
         <h2>Ingrédients</h2>
         <ul id="recipe-ingredients"></ul>
-
         <h2>Instructions</h2>
         <ol id="recipe-instructions"></ol>
 
-        <!-- Moyenne des notes -->
-        <div id="average-rating">
-            <p>Moyenne des notes : <span id="average-score">0</span> / 5</p>
+        <!-- Vidéo YouTube -->
+        <h2>Vidéo de la recette</h2>
+        <div class="recipe-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/votre_video_id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <!-- Système de notation par étoiles -->
-        <div class="rating">
-            <h3>Votre note</h3>
-            <div id="star-rating">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div>
-            <p id="rating-message"></p>
-        </div>
-
-        <!-- Section de commentaires -->
-        <section id="comments-section">
-            <h3>Laissez un avis :</h3>
-            <textarea id="comment-input" placeholder="Écrivez votre commentaire ici..."></textarea>
-            <button id="submit-comment">Soumettre le commentaire</button>
-
-            <div id="comments-list">
-                <!-- Liste des commentaires -->
-            </div>
-        </section>
     </section>
-
+    
     <footer>
         <ul>
             <li><a href="#mentions">Mentions légales</a></li>
@@ -77,122 +52,61 @@
             <a href="#">Pinterest</a>
         </div>
     </footer>
-
+    
     <script>
+        // Lorsque l'utilisateur tape dans la barre de recherche, on le redirige vers la page recipes.html
         document.addEventListener("DOMContentLoaded", function() {
-            // Simulation des données de recette (normalement, vous auriez un système pour récupérer ces données)
-            const recipe = {
-                title: "Tarte aux pommes",
-                image: "tarte_aux_pommes.jpg",
-                description: "Une délicieuse tarte aux pommes maison.",
-                ingredients: ["Pommes", "Pâte brisée", "Sucre", "Beurre", "Cannelle"],
-                instructions: ["Préchauffer le four", "Préparer la pâte", "Couper les pommes", "Cuire la tarte"],
-                averageRating: 4,  // Moyenne des notes sur 5
-                ratings: [],  // Notes des utilisateurs
-                comments: [
+            const searchInput = document.getElementById("searchInput");
+
+            if (searchInput) {
+                searchInput.addEventListener("input", function() {
+                    // Lorsque l'utilisateur tape quelque chose, on redirige vers "recipes.html"
+                    window.location.href = "recipes.html";
+                });
+            }
+
+            // On remplit la page avec les données de la recette
+            const recipeData = {
+                title: "Tarte aux fraises maison", 
+                image: "tarte_au_fraise.jpg", 
+                description: "Une délicieuse tarte aux fraises avec une pâte croustillante et une crème onctueuse.",
+                ingredients: [
+                    "Pâte sablée",
+                    "Crème pâtissière",
+                    "Fraises fraîches",
+                    "Sucre glace"
+                ],
+                instructions: [
+                    "Préparer la pâte sablée et l'étaler dans un moule.",
+                    "Cuire la pâte à blanc pendant 15 minutes.",
+                    "Préparer la crème pâtissière et la laisser refroidir.",
+                    "Garnir la pâte de crème pâtissière et ajouter les fraises.",
+                    "Saupoudrer de sucre glace avant de servir."
                 ]
             };
 
-            // Affichage des informations de la recette
-            document.getElementById("recipe-title").textContent = recipe.title;
-            document.getElementById("recipe-image").src = recipe.image;
-            document.getElementById("recipe-description").textContent = recipe.description;
-
-            // Affichage des ingrédients et instructions
+            // Mise à jour des éléments sur la page avec les données de la recette
+            document.getElementById("recipe-title").textContent = recipeData.title;
+            document.getElementById("recipe-image").src = recipeData.image;
+            document.getElementById("recipe-image").alt = recipeData.title;
+            document.getElementById("recipe-description").textContent = recipeData.description;
+            
             const ingredientsList = document.getElementById("recipe-ingredients");
-            recipe.ingredients.forEach(ingredient => {
+            recipeData.ingredients.forEach(function(ingredient) {
                 const li = document.createElement("li");
                 li.textContent = ingredient;
                 ingredientsList.appendChild(li);
             });
 
             const instructionsList = document.getElementById("recipe-instructions");
-            recipe.instructions.forEach(instruction => {
+            recipeData.instructions.forEach(function(instruction) {
                 const li = document.createElement("li");
                 li.textContent = instruction;
                 instructionsList.appendChild(li);
             });
-
-            // Affichage de la moyenne des notes
-            const averageScore = recipe.ratings.reduce((a, b) => a + b, 0) / recipe.ratings.length;
-            document.getElementById("average-score").textContent = averageScore.toFixed(1);
-
-            // Système de notation par étoiles
-            const stars = document.querySelectorAll("#star-rating .star");
-            let userRating = null;
-
-            stars.forEach(star => {
-                star.addEventListener("click", function() {
-                    userRating = parseInt(star.getAttribute("data-value"));
-                    stars.forEach(star => star.classList.remove("selected"));
-                    for (let i = 0; i < userRating; i++) {
-                        stars[i].classList.add("selected");
-                    }
-                    document.getElementById("rating-message").textContent = "Vous avez noté cette recette " + userRating + " étoiles.";
-                    localStorage.setItem("user-rating", userRating);  // Sauvegarder la note de l'utilisateur
-                });
-            });
-
-            // Gestion des commentaires
-            const commentInput = document.getElementById("comment-input");
-            const submitCommentButton = document.getElementById("submit-comment");
-            const commentsList = document.getElementById("comments-list");
-
-            // Afficher les commentaires existants
-            recipe.comments.forEach(comment => {
-                const div = document.createElement("div");
-                div.classList.add("comment");
-                div.innerHTML = `<strong>${comment.user}</strong>: ${comment.text}`;
-                commentsList.appendChild(div);
-            });
-
-            // Ajouter un nouveau commentaire
-            submitCommentButton.addEventListener("click", function() {
-                if (commentInput.value) {
-                    const newComment = { user: "Utilisateur", text: commentInput.value };
-                    recipe.comments.push(newComment);
-                    const div = document.createElement("div");
-                    div.classList.add("comment");
-                    div.innerHTML = `<strong>${newComment.user}</strong>: ${newComment.text}`;
-                    commentsList.appendChild(div);
-                    commentInput.value = "";  // Réinitialiser l'input
-                }
-            });
         });
     </script>
-
-    <style>
-        .star {
-            font-size: 30px;
-            cursor: pointer;
-            color: #ccc;
-        }
-
-        .star.selected {
-            color: gold;
-        }
-
-        #rating-message {
-            margin-top: 10px;
-        }
-
-        #comments-section {
-            margin-top: 20px;
-        }
-
-        .comment {
-            margin-bottom: 10px;
-        }
-
-        #comment-input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        #submit-comment {
-            padding: 10px 20px;
-        }
-    </style>
+    
+    <script src="script.js"></script>
 </body>
 </html>
