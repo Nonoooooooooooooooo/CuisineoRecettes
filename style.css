@@ -367,9 +367,10 @@ footer ul li a {
     transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
     transition: transform 0.3s ease;
 }
-/* Masquer la barre de recherche sur mobile */
+/* Masquer la barre de recherche et la vidéo sur mobile */
 @media screen and (max-width: 768px) {
-    .search-bar {
+    .search-bar,
+    .video-container {  /* Remplace "video-container" par la classe réelle de ta section vidéo */
         display: none;
     }
 }
