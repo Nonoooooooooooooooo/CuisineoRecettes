@@ -61,6 +61,17 @@
             <a href="#">Pinterest</a>
         </div>
     </footer>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById("searchInput");
+
+    if (searchInput) {
+        searchInput.addEventListener("input", function() {
+            // Lorsque l'utilisateur tape quelque chose, on redirige vers "recipes.html"
+            window.location.href = "recipes.html";
+        });
+    }
+});
+</script> 
 
 </body>
 </html>
