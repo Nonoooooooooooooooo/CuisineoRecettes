@@ -367,35 +367,35 @@ footer ul li a {
     transform: scale(1.05); /* Effet au survol pour une interaction visuelle */
     transition: transform 0.3s ease;
 }
-/* Masquer la barre de recherche sur mobile */
+/* Masquer la barre de recherche par défaut (sur mobile) */
 .search-bar {
-    display: none;
+    display: none; /* Cacher la barre de recherche par défaut sur mobile */
 }
 
-/* Afficher le bouton de recherche */
-.search-bar-btn {
-    display: block;
-    padding: 10px;
-    background-color: #ff6600;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+/* Afficher la barre de recherche sur PC */
+@media screen and (min-width: 769px) {
+    .search-bar {
+        display: block;  /* Afficher la barre de recherche sur les grands écrans */
+    }
+    .search-bar-btn {
+        display: none;  /* Masquer le bouton de recherche sur les grands écrans */
+    }
 }
 
-/* Media Query pour les petits écrans (mobile) */
+/* Afficher le bouton de recherche uniquement sur mobile */
 @media screen and (max-width: 768px) {
     .search-bar-btn {
-        display: block;  /* Afficher le bouton de recherche */
-        margin-top: 20px; /* Ajouter un peu d'espace */
+        display: block;  /* Afficher le bouton sur mobile */
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
     }
 
     .search-bar {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        margin-top: 10px;
-        display: none;  /* Cacher la barre de recherche par défaut */
-    }
-}
+        width: 10
+
