@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cuisineo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Cuisineo Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="recipes.html">Recettes</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact-section">
+    <h2>📩 Contactez-nous</h2>
+    <p>Une question ? Une suggestion ? Envoyez-nous un message !</p>
+
+    <form id="contactForm">
+        <div class="input-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Nom</label>
+        </div>
+
+        <div class="input-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="input-group">
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Votre message</label>
+        </div>
+
+        <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <p id="confirmationMessage" class="hidden">✅ Merci ! Votre message a bien été envoyé.</p>
+
+    <h3>📞 Coordonnées</h3>
+    <p><strong>Email :</strong> contact@tonsite.com</p>
+    <p><strong>Téléphone :</strong> +33 6 12 34 56 78</p>
+    
+    <h3>🔗 Suivez-nous</h3>
+    <div class="social-icons">
+        <a href="#">Instagram</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">Pinterest</a>
+    </div>
+</section>
+
+<footer>
+    <ul>
+        <li><a href="#mentions">Mentions légales</a></li>
+        <li><a href="#privacy">Politique de confidentialité</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
