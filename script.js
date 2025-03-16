@@ -139,3 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
     populateCarousels();
     setRecipeOfTheDay();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const confirmationMessage = document.getElementById("confirmationMessage");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Simule l'envoi du message (remplace par un vrai traitement backend si nécessaire)
+        confirmationMessage.classList.remove("hidden");
+
+        // Réinitialise le formulaire
+        form.reset();
+    });
+});
