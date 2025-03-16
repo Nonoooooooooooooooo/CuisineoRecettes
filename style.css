@@ -375,4 +375,8 @@ footer ul li a {
     }
 }
 
-
+.search-bar input {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+}
