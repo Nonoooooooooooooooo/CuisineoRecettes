@@ -49,10 +49,11 @@ function populateCarousels() {
 
 // ======================= CHOIX DE LA RECETTE DU JOUR =======================
 function getRandomRecipeOfTheDay() {
+    // Créer un tableau de toutes les recettes avec leur catégorie
     const allRecipes = [];
     Object.keys(recipesByCategory).forEach(category => {
-        recipesByCategory[category].forEach(recipe => {
-            allRecipes.push({ ...recipe, category });
+        recipesByCategory[category].forEach((recipe, index) => {
+            allRecipes.push({ ...recipe, category, indexInCategory: index });
         });
     });
 
@@ -89,7 +90,7 @@ function setRecipeOfTheDay() {
 
     // Mise à jour du lien vers la recette
     const categoryIndex = Object.keys(recipesByCategory).indexOf(recipeOfTheDay.category);  // Index de la catégorie
-    const recipeIndex = recipesByCategory[recipeOfTheDay.category].indexOf(recipeOfTheDay);  // Index de la recette dans la catégorie
+    const recipeIndex = recipeOfTheDay.indexInCategory;  // Index de la recette dans la catégorie
     recipeLink.href = `recette${categoryIndex + 1}_${recipeIndex + 1}.html`;  // Lien vers la page de la recette
 }
 
