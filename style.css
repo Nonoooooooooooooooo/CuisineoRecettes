@@ -38,9 +38,21 @@ nav ul li a {
     color: white;
     font-weight: bold;
 }
- search-bar input {
-    padding: 8px;
-    border-radius: 4px;
+.search bar {
+    background-color: #ff7f50;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.search bar form {
+    margin-top: 20px;
+}
+
+.search bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
     border: none;
 }
 
