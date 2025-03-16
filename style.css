@@ -375,29 +375,43 @@ footer ul li a {
 }
 /* Style de base pour la barre de recherche */
 .search-bar {
-    width: 100%;  /* S'assure que la barre de recherche occupe toute la largeur disponible */
-    padding: 10px;  /* Ajoute un peu de padding autour de l'élément */
-    box-sizing: border-box;  /* Inclut le padding et la bordure dans la largeur totale de l'élément */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative; /* Pour pouvoir la déplacer facilement sur mobile */
 }
 
 .search-bar input {
-    width: 100%;  /* L'input occupe toute la largeur de la barre */
-    padding: 10px;  /* Ajoute un padding pour rendre l'input plus agréable */
-    border: 1px solid #ccc;  /* Ajoute une bordure simple */
-    border-radius: 4px;  /* Bordures arrondies */
-    font-size: 16px;  /* Taille de la police pour la lisibilité */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 /* Media Query pour les petits écrans (mobile) */
 @media screen and (max-width: 768px) {
     .search-bar {
-        padding: 10px 15px;  /* Un peu plus de padding sur les côtés */
+        padding: 10px 15px;
+        margin-top: 10px;  /* Ajoute de l'espace au-dessus pour ne pas que ce soit trop serré */
     }
 
     .search-bar input {
-        font-size: 14px;  /* Réduit la taille de la police sur les petits écrans */
-        padding: 8px;  /* Moins de padding sur l'input */
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Déplacer la barre de recherche en dessous du menu */
+    header {
+        display: flex;
+        flex-direction: column;  /* Organiser les éléments en colonne sur mobile */
+        align-items: flex-start;  /* Aligner les éléments à gauche */
+    }
+
+    .search-bar {
+        margin-top: 20px; /* Donne un peu d'espace au-dessus de la barre de recherche */
     }
 }
+
 
 
