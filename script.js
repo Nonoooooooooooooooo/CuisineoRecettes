@@ -1,13 +1,3 @@
-// ======================= NEWSLETTER =======================
-const newsletterButton = document.querySelector('.newsletter button');
-
-if (newsletterButton) {
-    newsletterButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        alert('Merci de vous être abonné à notre newsletter !');
-    });
-}
-
 // ======================= BASE DE DONNÉES DES RECETTES =======================
 const recipesByCategory = {
     classiques: [
@@ -70,6 +60,7 @@ function getRandomRecipeOfTheDay() {
     return allRecipes[randomIndex];
 }
 
+// ======================= RECETTE DU JOUR =======================
 function setRecipeOfTheDay() {
     const recipeOfTheDay = getRandomRecipeOfTheDay();
 
@@ -83,7 +74,7 @@ function setRecipeOfTheDay() {
     const recipeImage = featuredRecipeSection.querySelector('img');
     const recipeTitle = featuredContent.querySelector('h2');
     const recipeDescription = featuredContent.querySelector('p');
-    const recipeLink = featuredContent.querySelector('a'); // Sélection du bouton "Voir la recette"
+    const recipeLink = featuredContent.querySelector('a');
 
     if (!recipeImage || !recipeTitle || !recipeDescription || !recipeLink) {
         console.error("Un ou plusieurs éléments de la recette du moment sont manquants.");
@@ -97,9 +88,9 @@ function setRecipeOfTheDay() {
     recipeDescription.textContent = `Découvrez cette recette incontournable de la catégorie ${recipeOfTheDay.category}.`;
 
     // Mise à jour du lien vers la recette
-    const categoryIndex = Object.keys(recipesByCategory).indexOf(recipeOfTheDay.category) + 1;
-    const recipeIndex = recipesByCategory[recipeOfTheDay.category].indexOf(recipeOfTheDay) + 1;
-    recipeLink.href = `recette${categoryIndex}_${recipeIndex}.html`;
+    const categoryIndex = Object.keys(recipesByCategory).indexOf(recipeOfTheDay.category);  // Index de la catégorie
+    const recipeIndex = recipesByCategory[recipeOfTheDay.category].indexOf(recipeOfTheDay);  // Index de la recette dans la catégorie
+    recipeLink.href = `recette${categoryIndex + 1}_${recipeIndex + 1}.html`;  // Lien vers la page de la recette
 }
 
 // ======================= BARRE DE RECHERCHE =======================
@@ -147,4 +138,3 @@ document.addEventListener('DOMContentLoaded', function () {
     populateCarousels();
     setRecipeOfTheDay();
 });
-
