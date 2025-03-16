@@ -139,18 +139,3 @@ document.addEventListener('DOMContentLoaded', function () {
     populateCarousels();
     setRecipeOfTheDay();
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const searchBar = document.querySelector('.search-bar');
-    const searchBarBtn = document.querySelector('.search-bar-btn');
-
-    if (searchBarBtn) {
-        searchBarBtn.addEventListener('click', function() {
-            if (searchBar.style.display === 'block') {
-                searchBar.style.display = 'none'; // Masquer la barre de recherche
-            } else {
-                searchBar.style.display = 'block'; // Afficher la barre de recherche
-            }
-        });
-    }
-});
-
