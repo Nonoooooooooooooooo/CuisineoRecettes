@@ -536,3 +536,36 @@ footer {
         width: 90%;
     }
 }
+.legal-container {
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.legal-container h1 {
+    color: #ff5722;
+    text-align: center;
+}
+
+.legal-container h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.legal-container ul {
+    padding-left: 20px;
+}
+
+.legal-container p, .legal-container li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .legal-container {
+        width: 90%;
+    }
+}
