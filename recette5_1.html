@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette - Cuisineo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Cuisineo Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="recipes.html">Recettes</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher des recettes..." id="searchInput">
+        </div>
+    </header>
+    
+    <section class="recipe-detail">
+        <h1 id="recipe-title"></h1>
+        <img id="recipe-image" src="" alt="Image de la recette">
+        <p id="recipe-description"></p>
+        <h2>Ingrédients</h2>
+        <ul id="recipe-ingredients"></ul>
+        <h2>Instructions</h2>
+        <ol id="recipe-instructions"></ol>
+
+        <!-- Vidéo YouTube -->
+        <div class="recipe-video">
+            <h2>Vidéo de la recette</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tyuBNZ_yAQ8looko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+    
+    <footer>
+        <ul>
+            <li><a href="mentions.html">Mentions légales</a></li>
+            <li><a href="privacy.html">Politique de confidentialité</a></li>
+            <li><a href="realcontact.html">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Pinterest</a>
+        </div>
+    </footer>
+    
+    <script>
+        // Lorsque l'utilisateur tape dans la barre de recherche, on le redirige vers la page recipes.html
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("searchInput");
+
+            if (searchInput) {
+                searchInput.addEventListener("input", function() {
+                    // Lorsque l'utilisateur tape quelque chose, on redirige vers "recipes.html"
+                    window.location.href = "recipes.html";
+                });
+            }
+
+            // On remplit la page avec les données de la recette
+            const recipeData = {
+                title: "Sauce au fromage blanc", 
+                image: "tarte_au_fraise.jpg", 
+                description: "Une sauce passe-partout, fraîche, et délicieuse !",
+                ingredients: [
+                    "Ingrédients"
+                    "8 pommes de terre de belles tailles",
+                    "2 oignons (adjectif a trouver)",
+                    "3 oeufs frais",
+                    "Persil frais",
+                    "2 cuillères à soupe de farine",
+                    "Sel,poivre à votre convenance",
+                ],
+                instructions: [
+                    "Eplucher et laver les pommes de terre, puis les hacher/raper avec une rape ou un robot.",
+                    "Faire de même pour le persil et les oignons.",
+                    "Réunir le tout dans un saladier, saler, poivrer et ajouter la farine et les oeufs (entiers) battus.",
+                    "Former des galettes de la forme qui vous convient puis les faires griller dans une poêle dans laquelle on aura préalablement fait chauffer de l'huile.",
+                    "Les faires griller des deux cotés puis une fois la cuisson achevée, déposer sur de l'essuie-tout pour retirer l'exedent de graisse."
+                    "Servir bien chaud avec une petite sauce au fromage blanc."
+                    "Se régaler !"
+                ]
+            };
+
+            // Mise à jour des éléments sur la page avec les données de la recette
+            document.getElementById("recipe-title").textContent = recipeData.title;
+            document.getElementById("recipe-image").src = recipeData.image;
+            document.getElementById("recipe-image").alt = recipeData.title;
+            document.getElementById("recipe-description").textContent = recipeData.description;
+            
+            const ingredientsList = document.getElementById("recipe-ingredients");
+            recipeData.ingredients.forEach(function(ingredient) {
+                const li = document.createElement("li");
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+            });
+
+            const instructionsList = document.getElementById("recipe-instructions");
+            recipeData.instructions.forEach(function(instruction) {
+                const li = document.createElement("li");
+                li.textContent = instruction;
+                instructionsList.appendChild(li);
+            });
+        });
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
