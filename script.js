@@ -21,7 +21,7 @@ const recipesByCategory = {
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ],
     sauces: [ // ✅ Nouvelle catégorie
-        { name: "Sauce bolognaise", image: "sauce_bolognaise.jpg" },
+        { name: "Sauce au fromage blanc", image: "sauce_bolognaise.jpg" },
         { name: "Sauce béchamel", image: "sauce_bechamel.jpg" },
         { name: "Sauce au poivre", image: "sauce_poivre.jpg" }
     ]
