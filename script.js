@@ -20,6 +20,8 @@ const recipesByCategory = {
         { name: "Chocolat chaud maison", image: "chocolat_chaud.jpg" },
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ]
+    sauces : [
+        {name : "sauce au fromage blanc", image: ""},
 };
 
 // ======================= GÉNÉRATION DES CARTES =======================
