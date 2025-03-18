@@ -19,8 +19,14 @@ const recipesByCategory = {
         { name: "Smoothie banane-fraise", image: "smoothie.jpg" },
         { name: "Chocolat chaud maison", image: "chocolat_chaud.jpg" },
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
+    ],
+    sauces: [ // ✅ Nouvelle catégorie
+        { name: "Sauce bolognaise", image: "sauce_bolognaise.jpg" },
+        { name: "Sauce béchamel", image: "sauce_bechamel.jpg" },
+        { name: "Sauce au poivre", image: "sauce_poivre.jpg" }
     ]
 };
+
 
 // ======================= GÉNÉRATION DES CARTES =======================
 function populateCarousels() {
