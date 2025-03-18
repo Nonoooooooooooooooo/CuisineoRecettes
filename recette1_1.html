@@ -54,43 +54,41 @@
     </footer>
     
     <script>
-        // Lorsque l'utilisateur tape dans la barre de recherche, on le redirige vers la page recipes.html
         document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById("searchInput");
 
             if (searchInput) {
                 searchInput.addEventListener("input", function() {
-                    // Lorsque l'utilisateur tape quelque chose, on redirige vers "recipes.html"
                     window.location.href = "recipes.html";
                 });
             }
 
-            // On remplit la page avec les données de la recette
+            // Données de la recette
             const recipeData = {
                 title: "Krumpakichele aux pommes de terre", 
                 image: "tarte_au_fraise.jpg", 
-                description: "Tentez cette recette traditionnelle de l'Est de la France qui égayera vos soirée entre amis",
+                description: "Tentez cette recette traditionnelle de l'Est de la France qui égayera vos soirées entre amis.",
                 ingredients: [
-                    "Ingrédients pour 4"
+                    "Ingrédients pour 4", 
                     "8 pommes de terre de belles tailles",
                     "2 oignons blancs",
-                    "3 oeufs frais",
+                    "3 œufs frais",
                     "Persil frais",
                     "2 cuillères à soupe de farine",
-                    "Sel,poivre à votre convenance"
+                    "Sel, poivre à votre convenance"
                 ],
                 instructions: [
-                    "Eplucher et laver les pommes de terre, puis les hacher/raper avec une rape ou un robot.",
+                    "Éplucher et laver les pommes de terre, puis les râper avec une râpe ou un robot.",
                     "Faire de même pour le persil et les oignons.",
-                    "Réunir le tout dans un saladier, saler, poivrer et ajouter la farine et les oeufs (entiers) battus.",
-                    "Former des galettes de la forme qui vous convient puis les faires griller dans une poêle dans laquelle on aura préalablement fait chauffer de l'huile.",
-                    "Les faires griller des deux cotés puis une fois la cuisson achevée, déposer sur de l'essuie-tout pour retirer l'exedent de graisse.",
-                    "Servir bien chaud avec une petite sauce au fromage blanc.",
+                    "Réunir le tout dans un saladier, saler, poivrer et ajouter la farine et les œufs battus.",
+                    "Former des galettes de la forme qui vous convient, puis les faire griller dans une poêle avec un peu d'huile.",
+                    "Les faire griller des deux côtés, puis une fois la cuisson achevée, déposer sur de l'essuie-tout pour retirer l'excédent de graisse.",
+                    `Servir bien chaud avec une petite <a href="recette5_1.html" style="color: blue; text-decoration: underline;">sauce au fromage blanc</a>.`,
                     "Se régaler !"
                 ]
             };
 
-            // Mise à jour des éléments sur la page avec les données de la recette
+            // Mise à jour de la page
             document.getElementById("recipe-title").textContent = recipeData.title;
             document.getElementById("recipe-image").src = recipeData.image;
             document.getElementById("recipe-image").alt = recipeData.title;
@@ -104,9 +102,16 @@
             });
 
             const instructionsList = document.getElementById("recipe-instructions");
-            recipeData.instructions.forEach(function(instruction) {
+            recipeData.instructions.forEach(function(instruction, index) {
                 const li = document.createElement("li");
-                li.textContent = instruction;
+
+                // Vérifier si c'est la phrase avec le lien
+                if (index === 5) {
+                    li.innerHTML = instruction; // Utiliser innerHTML pour le lien
+                } else {
+                    li.textContent = instruction;
+                }
+
                 instructionsList.appendChild(li);
             });
         });
