@@ -1,4 +1,3 @@
-<!-- recette.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,7 +20,7 @@
             </ul>
         </nav>
         <div class="search-bar">
-            <input type="text" placeholder="Rechercher des recettes...">
+            <input type="text" placeholder="Rechercher des recettes..." id="searchInput">
         </div>
     </header>
     
@@ -33,31 +32,89 @@
         <ul id="recipe-ingredients"></ul>
         <h2>Instructions</h2>
         <ol id="recipe-instructions"></ol>
+
+        <!-- Vidéo YouTube -->
+        <div class="recipe-video">
+            <h2>Vidéo de la recette</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tyuBNZ_yAQ8looko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </section>
     
     <footer>
         <ul>
-            <li><a href="#mentions">Mentions légales</a></li>
-            <li><a href="#privacy">Politique de confidentialité</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="mentions.html">Mentions légales</a></li>
+            <li><a href="privacy.html">Politique de confidentialité</a></li>
+            <li><a href="realcontact.html">Contact</a></li>
         </ul>
         <div class="social-icons">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">Pinterest</a>
+            <a href="https://www.instagram.com/cuisineorecettes/">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61574054561482">Facebook</a>
+            <a href="https://pin.it/1qQxYteTL">Pinterest</a>
         </div>
     </footer>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById("searchInput");
+            const searchInput = document.getElementById("searchInput");
 
-    if (searchInput) {
-        searchInput.addEventListener("input", function() {
-            // Lorsque l'utilisateur tape quelque chose, on redirige vers "recipes.html"
-            window.location.href = "recipes.html";
+            if (searchInput) {
+                searchInput.addEventListener("input", function() {
+                    window.location.href = "recipes.html";
+                });
+            }
+
+            // Données de la recette
+            const recipeData = {
+                title: "Roses des sables aux deux chocolats", 
+                image: "tarte_au_fraise.jpg", 
+                description: "Une recette (très) gourmande pour les amateurs de chocolat.",
+                ingredients: [
+                    "Ingrédients pour 4 :", 
+                    "40g de corn flakes ",
+                    "2 oignons blancs",
+                    "3 œufs frais",
+                    "Persil frais",
+                    "2 cuillères à soupe de farine",
+                    "Sel, poivre à votre convenance"
+                ],
+                instructions: [
+                    "Éplucher et laver les pommes de terre, puis les râper avec une râpe ou un robot.",
+                    "Faire de même pour le persil et les oignons.",
+                    "Réunir le tout dans un saladier, saler, poivrer et ajouter la farine et les œufs battus.",
+                    "Former des galettes de la forme qui vous convient, puis les faire griller dans une poêle avec un peu d'huile.",
+                    "Les faire griller des deux côtés, puis une fois la cuisson achevée, déposer sur de l'essuie-tout pour retirer l'excédent de graisse.",
+                    `Servir bien chaud avec une petite <a href="recette5_1.html" class="sauce-link">sauce au fromage blanc</a>.`,
+                    "Se régaler !"
+                ]
+            };
+
+            // Mise à jour de la page
+            document.getElementById("recipe-title").textContent = recipeData.title;
+            document.getElementById("recipe-image").src = recipeData.image;
+            document.getElementById("recipe-image").alt = recipeData.title;
+            document.getElementById("recipe-description").textContent = recipeData.description;
+            
+            const ingredientsList = document.getElementById("recipe-ingredients");
+            recipeData.ingredients.forEach(function(ingredient) {
+                const li = document.createElement("li");
+                li.textContent = ingredient;
+                ingredientsList.appendChild(li);
+            });
+
+            const instructionsList = document.getElementById("recipe-instructions");
+            recipeData.instructions.forEach(function(instruction, index) {
+                const li = document.createElement("li");
+
+                // Vérifier si c'est la phrase avec le lien
+                if (index === 5) {
+                    li.innerHTML = instruction; // Utiliser innerHTML pour le lien
+                } else {
+                    li.textContent = instruction;
+                }
+
+                instructionsList.appendChild(li);
+            });
         });
-    }
-});
     </script>
     
     <script src="script.js"></script>
