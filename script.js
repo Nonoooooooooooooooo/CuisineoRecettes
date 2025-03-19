@@ -6,7 +6,7 @@ const recipesByCategory = {
     entrees: [
     ],
     desserts: [
-        { name: "Roses des sables aux double chocolat", image: "tarte_tatin.jpg" }
+        { name: "Roses des sables aux deux chocolat", image: "tarte_tatin.jpg" }
     ],
     boissons: [
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
