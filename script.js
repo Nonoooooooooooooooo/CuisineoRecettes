@@ -1,29 +1,18 @@
 // ======================= BASE DE DONNÉES DES RECETTES =======================
 const recipesByCategory = {
     classiques: [
-        { name: "Coq au vin", image: "coq_au_vin.jpg" },
-        { name: "Bœuf bourguignon", image: "boeuf_bourguignon.jpg" },
-        { name: "Quiche lorraine", image: "quiche_lorraine.jpg" }
+        { name: "Krumpakichele aux pommes de terre", image: "coq_au_vin.jpg" }
     ],
     entrees: [
-        { name: "Bruschetta", image: "bruschetta.jpg" },
-        { name: "Velouté de potiron", image: "veloute.jpg" },
-        { name: "Salade César", image: "salade_cesar.jpg" }
     ],
     desserts: [
-        { name: "Tarte tatin", image: "tarte_tatin.jpg" },
-        { name: "Mousse au chocolat", image: "mousse.jpg" },
-        { name: "Profiteroles", image: "profiteroles.jpg" }
+        { name: "Roses des sables aux double chocolat", image: "tarte_tatin.jpg" }
     ],
     boissons: [
-        { name: "Smoothie banane-fraise", image: "smoothie.jpg" },
-        { name: "Chocolat chaud maison", image: "chocolat_chaud.jpg" },
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ],
     sauces: [ // ✅ Nouvelle catégorie
-        { name: "Sauce au fromage blanc", image: "fromage_blanc.jpg" },
-        { name: "Sauce béchamel", image: "sauce_bechamel.jpg" },
-        { name: "Sauce au poivre", image: "sauce_poivre.jpg" }
+        { name: "Sauce au fromage blanc", image: "fromage_blanc.jpg" }
     ]
 };
 
