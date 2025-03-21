@@ -102,10 +102,6 @@
                 ingredientsList.appendChild(li);
             });
 
-            const instructionsList = document.getElementById("recipe-instructions");
-            recipeData.instructions.forEach(function(instruction, index) {
-                const li = document.createElement("li");
-
                 // Vérifier si c'est la phrase avec le lien
                 if (index === 5) {
                     li.innerHTML = instruction; // Utiliser innerHTML pour le lien
