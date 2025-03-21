@@ -630,7 +630,7 @@ body {
 
 /* Liste des instructions */
 #recipe-instructions {
-    text-align: left;
+    text-align: right;
     padding-left: 0;
 }
 
