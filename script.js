@@ -6,13 +6,13 @@ const recipesByCategory = {
     entrees: [
     ],
     desserts: [
-        { name: "Roses des sables aux deux chocolat", image: "roses.jpg" }
+        { name: "Roses des sables aux deux chocolat", image: "roses[1].jpg" }
     ],
     boissons: [
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ],
     sauces: [ // ✅ Nouvelle catégorie
-        { name: "Sauce au fromage blanc", image: "sauce_fromage_blanc.jpg" }
+        { name: "Sauce au fromage blanc", image: "sauce_fromage_blanc[1].jpg" }
     ]
 };
 
