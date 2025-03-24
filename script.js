@@ -1,18 +1,18 @@
 // ======================= BASE DE DONNÉES DES RECETTES =======================
 const recipesByCategory = {
     classiques: [
-        { name: "Krumpakichele aux pommes de terre", image: "coq_au_vin.jpg" }
+        { name: "Krumpakichele aux pommes de terre", image: "krumpa.jpg" }
     ],
     entrees: [
     ],
     desserts: [
-        { name: "Roses des sables aux deux chocolat", image: "tarte_tatin.jpg" }
+        { name: "Roses des sables aux deux chocolat", image: "roses.jpg" }
     ],
     boissons: [
         { name: "Citronnade fraîche", image: "citronnade.jpg" }
     ],
     sauces: [ // ✅ Nouvelle catégorie
-        { name: "Sauce au fromage blanc", image: "fromage_blanc.jpg" }
+        { name: "Sauce au fromage blanc", image: "sauce_fromage_blanc.jpg" }
     ]
 };
 
